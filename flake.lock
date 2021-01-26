@@ -19,17 +19,17 @@
     "nss-dev": {
       "flake": false,
       "locked": {
-        "lastModified": 1608656198,
-        "narHash": "sha256-gg1dkRaI5/r4/1bwanlmCsbM73ER7+5B5W0Q6c9MmDI=",
+        "lastModified": 1611335308,
+        "narHash": "sha256-xats4lyhtvPLnQrVVW1lIo/bj3DT4O2jv1BmXNOmnrY=",
         "owner": "nss-dev",
         "repo": "nss",
-        "rev": "fac0bade04aded89825cba0cb5b72f486444615a",
+        "rev": "8f01a1b06b0c300922941fbbace1ffc9e9bfbaca",
         "type": "github"
       },
       "original": {
         "owner": "nss-dev",
+        "ref": "NSS_3_61_RTM",
         "repo": "nss",
-        "rev": "fac0bade04aded89825cba0cb5b72f486444615a",
         "type": "github"
       }
     },
