@@ -3,8 +3,8 @@
 
   inputs = {
     nss-dev = {
-      # https://kuix.de/mozilla/versions/ NSS: NSS_3_61_RTM
-      url = github:nss-dev/nss/70e79341b583ff45a58bf3832d76b6c8782a969b;
+      # https://kuix.de/mozilla/versions/ NSS: NSS_3_66_RTM
+      url = github:nss-dev/nss/NSS_3_66_RTM;
       flake = false;
     };
     nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
@@ -12,7 +12,7 @@
 
   outputs = { self, nixpkgs, nss-dev }:
     let
-      nss_version = "3.65";
+      nss_version = "3.66";
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages."${system}";
     in

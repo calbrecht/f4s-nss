@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1610219734,
-        "narHash": "sha256-hCsGe2nDz+SX4uO+lj0qPVcSGZdt52R9Yk5MOYs4djw=",
+        "lastModified": 1622194753,
+        "narHash": "sha256-76qtvFp/vFEz46lz5iZMJ0mnsWQYmuGYlb0fHgKqqMg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "257cbbcd3ab7bd96f5d24d50adc807de7c82e06d",
+        "rev": "540dccb2aeaffa9dc69bfdc41c55abd7ccc6baa3",
         "type": "github"
       },
       "original": {
@@ -19,17 +19,17 @@
     "nss-dev": {
       "flake": false,
       "locked": {
-        "lastModified": 1620286439,
-        "narHash": "sha256-7vqJQJzUsmYziFMdJN3Z2LMazGIg8UNHSmrlbJg4wOI=",
+        "lastModified": 1622195443,
+        "narHash": "sha256-2IT+KYzo+iisu//wNnwuTXm193c+16UcWuqCR82G5+M=",
         "owner": "nss-dev",
         "repo": "nss",
-        "rev": "70e79341b583ff45a58bf3832d76b6c8782a969b",
+        "rev": "ecc7deaa8d3216c7ba8b9a397625ce1dbc31fefc",
         "type": "github"
       },
       "original": {
         "owner": "nss-dev",
+        "ref": "NSS_3_66_RTM",
         "repo": "nss",
-        "rev": "70e79341b583ff45a58bf3832d76b6c8782a969b",
         "type": "github"
       }
     },
