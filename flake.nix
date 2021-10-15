@@ -2,17 +2,17 @@
   description = "Nss nix flake.";
 
   inputs = {
-    nss-dev = {
+    nss-dev-src = {
       # https://kuix.de/mozilla/versions/ NSS: NSS_3_66_RTM
-      url = github:nss-dev/nss/NSS_3_66_RTM;
+      url = github:nss-dev/nss/NSS_3_71_RTM;
       flake = false;
     };
     nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
   };
 
-  outputs = { self, nixpkgs, nss-dev }:
+  outputs = { self, nixpkgs, nss-dev-src }:
     let
-      nss_version = "3.66";
+      nss_version = "3.71";
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages."${system}";
     in
@@ -50,7 +50,7 @@
 
         nss-testsuite = prev.stdenv.mkDerivation {
           name = "nss-testsuite-${nss_version}";
-          src = nss-dev;
+          src = nss-dev-src;
           dontConfigure = true;
           dontBuild = true;
           installPhase = ''
@@ -63,20 +63,20 @@
             for file in $(grep -r --files-with-matches "\''${DIST}/\''${OBJDIR}/bin" $out)
             do
               substituteInPlace "$file" \
-                --replace "\''${DIST}/\''${OBJDIR}/bin" "${final.nss.tools}/bin"
+                --replace "\''${DIST}/\''${OBJDIR}/bin" "${final.nss-dev.tools}/bin"
             done
 
             for file in $(grep -r --files-with-matches "\''${DIST}/\''${OBJDIR}/lib" $out)
             do
               substituteInPlace "$file" \
-                --replace "\''${DIST}/\''${OBJDIR}/lib" "${final.nss}/lib"
+                --replace "\''${DIST}/\''${OBJDIR}/lib" "${final.nss-dev}/lib"
             done
           '';
         };
 
-        nss = prev.nss.overrideAttrs (old: {
+        nss-dev = prev.nss.overrideAttrs (old: {
           version = nss_version;
-          src = nss-dev;
+          src = nss-dev-src;
           postUnpack = ''
             mkdir nss-${nss_version}
             mv $sourceRoot nss-${nss_version}/nss
