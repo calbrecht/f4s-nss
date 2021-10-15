@@ -1,5 +1,5 @@
 {
-  description = "Nss nix flake.";
+  description = "nss-dev nix flake for firefox nightly.";
 
   inputs = {
     nss-dev-src = {
