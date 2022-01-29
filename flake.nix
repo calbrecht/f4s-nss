@@ -9,7 +9,6 @@
       url = github:nss-dev/nss/cea7654c90aaed1d1e29f735ce765974c08898df;
       flake = false;
     };
-    nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
   };
 
   outputs = { self, nixpkgs, nss-dev-src }:
